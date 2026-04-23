@@ -1,0 +1,221 @@
+FOLLOW SETS
+
+---
+
+## START SYMBOL
+
+FOLLOW(PROGRAM) = { $ }
+
+---
+
+## HIGH LEVEL
+
+FOLLOW(STATEMENT) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+FOLLOW(DATA_TYPE) = { IDENTIFIER, "[" }
+
+FOLLOW(TYPE_TAIL) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+FOLLOW(DECL_TAIL) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+FOLLOW(ID_TAIL) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+---
+
+## ARRAY / FUNCTION PART
+
+FOLLOW(ARR_TAIL) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+FOLLOW(PARAM_LIST) = { ")" }
+
+FOLLOW(PARAM) = { ",", ")" }
+
+FOLLOW(ARG_LIST) = { ")" }
+
+---
+
+## CONTROL FLOW
+
+FOLLOW(IF_STATEMENT) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+FOLLOW(IF_TAIL) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+FOLLOW(IF_TAIL2) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+FOLLOW(WHILE_LOOP) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+FOLLOW(RETURN_STMT) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+$
+}
+
+---
+
+## BLOCK
+
+FOLLOW(BLOCK) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+else,
+$
+}
+
+---
+
+## EXPRESSIONS
+
+FOLLOW(EXPRESSION) =
+{
+")", "]", ",",
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+else,
+$
+}
+
+FOLLOW(LOGICAL) = FOLLOW(EXPRESSION)
+
+FOLLOW(EQUALITY) = FOLLOW(EXPRESSION)
+
+FOLLOW(COMPARISON) = FOLLOW(EXPRESSION)
+
+FOLLOW(SHIFT) = FOLLOW(EXPRESSION)
+
+FOLLOW(ADD) = FOLLOW(EXPRESSION)
+
+FOLLOW(MUL) = FOLLOW(EXPRESSION)
+
+FOLLOW(MOD) = FOLLOW(EXPRESSION)
+
+---
+
+## PRIMARY
+
+FOLLOW(PRIMARY) =
+{
+"%", "*", "/", "+", "-",
+"<<", ">>",
+">", "<", ">=", "<=",
+"==", "!=",
+"&&", "||",
+")", "]", ",",
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+"}",
+else,
+$
+}
+
+FOLLOW(PRIMARY_TAIL) = FOLLOW(PRIMARY)

@@ -1,0 +1,170 @@
+PROGRAM → STATEMENT*
+
+// STATEMENTS
+
+STATEMENT →
+    DATA_TYPE TYPE_TAIL
+    | IDENTIFIER ID_TAIL
+    | IF_STATEMENT
+    | WHILE_LOOP
+    | RETURN_STMT
+    | BLOCK
+
+
+
+// DATA TYPES
+
+DATA_TYPE →
+    "int"
+    | "short"
+    | "long"
+    | "char"
+
+
+
+// TYPE HANDLING (VAR / FUNC / ARRAY)
+
+TYPE_TAIL →
+    IDENTIFIER DECL_TAIL
+    | "[" "]" IDENTIFIER "=" "new" DATA_TYPE "[" EXPRESSION "]"
+
+
+
+// VARIABLE / FUNCTION DECLARATION
+
+DECL_TAIL →
+    "=" EXPRESSION
+    | "(" PARAM_LIST? ")" BLOCK
+
+
+
+// IDENTIFIER HANDLING
+
+ID_TAIL →
+    "=" EXPRESSION
+    | "(" ARG_LIST? ")"
+    | "[" EXPRESSION "]" ARR_TAIL
+
+ARR_TAIL →
+    "=" EXPRESSION
+    | ε
+
+
+
+// FUNCTIONS
+
+PARAM_LIST →
+    PARAM ("," PARAM)*
+
+PARAM →
+    DATA_TYPE IDENTIFIER
+
+ARG_LIST →
+    EXPRESSION ("," EXPRESSION)*
+
+
+
+// BLOCK
+
+BLOCK →
+    "{" STATEMENT* "}"
+
+
+
+// CONTROL FLOW (LL(1) FIXED)
+
+IF_STATEMENT →
+    "if" "(" EXPRESSION ")" BLOCK IF_TAIL
+
+IF_TAIL →
+    "else" IF_TAIL2
+    | ε
+
+IF_TAIL2 →
+    "if" "(" EXPRESSION ")" BLOCK IF_TAIL
+    | BLOCK
+
+WHILE_LOOP →
+    "while" "(" EXPRESSION ")" BLOCK
+
+RETURN_STMT →
+    "return" EXPRESSION
+
+
+// EXPRESSIONS
+
+EXPRESSION →
+    LOGICAL
+
+LOGICAL →
+    EQUALITY LOGICAL_TAIL
+
+LOGICAL_TAIL →
+      "&&" EQUALITY LOGICAL_TAIL
+    | "||" EQUALITY LOGICAL_TAIL
+    | ε
+
+EQUALITY →
+    COMPARISON EQUALITY_TAIL
+
+EQUALITY_TAIL →
+      "==" COMPARISON EQUALITY_TAIL
+    | "!=" COMPARISON EQUALITY_TAIL
+    | ε
+
+COMPARISON →
+    SHIFT COMPARISON_TAIL
+
+COMPARISON_TAIL →
+      ">" SHIFT COMPARISON_TAIL
+    | "<" SHIFT COMPARISON_TAIL
+    | ">=" SHIFT COMPARISON_TAIL
+    | "<=" SHIFT COMPARISON_TAIL
+    | ε
+
+SHIFT →
+    ADD SHIFT_TAIL
+
+SHIFT_TAIL →
+      "<<" ADD SHIFT_TAIL
+    | ">>" ADD SHIFT_TAIL
+    | ε
+
+ADD →
+    MUL ADD_TAIL
+
+ADD_TAIL →
+      "+" MUL ADD_TAIL
+    | "-" MUL ADD_TAIL
+    | ε
+
+MUL →
+    MOD MUL_TAIL
+
+MUL_TAIL →
+      "*" MOD MUL_TAIL
+    | "/" MOD MUL_TAIL
+    | ε
+
+MOD →
+    PRIMARY MOD_TAIL
+
+MOD_TAIL →
+      "%" PRIMARY MOD_TAIL
+    | ε
+
+
+// PRIMARY (LEFT FACTORED)
+
+PRIMARY →
+    IDENTIFIER PRIMARY_TAIL
+    | NUMBER
+    | "(" EXPRESSION ")"
+    | STRING
+    | CHARACTER
+
+PRIMARY_TAIL →
+    "(" ARG_LIST? ")"
+    | "[" EXPRESSION "]"
+    | ε
+

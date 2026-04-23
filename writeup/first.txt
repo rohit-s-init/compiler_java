@@ -1,0 +1,90 @@
+FIRST SETS
+
+---
+
+## BASIC NON-TERMINALS
+
+FIRST(DATA_TYPE) = { int, short, long, char }
+
+FIRST(PARAM) = { int, short, long, char }
+
+FIRST(PARAM_LIST) = { int, short, long, char }
+
+FIRST(ARG_LIST) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+---
+
+## CONTROL & BLOCK
+
+FIRST(BLOCK) = { "{" }
+
+FIRST(IF_STATEMENT) = { "if" }
+
+FIRST(IF_TAIL) = { "else", ε }
+
+FIRST(IF_TAIL2) = { "if", "{" }
+
+FIRST(WHILE_LOOP) = { "while" }
+
+FIRST(RETURN_STMT) = { "return" }
+
+---
+
+## DECLARATION & IDENTIFIER HANDLING
+
+FIRST(TYPE_TAIL) = { IDENTIFIER, "[" }
+
+FIRST(DECL_TAIL) = { "=", "(" }
+
+FIRST(ID_TAIL) = { "=", "(", "[" }
+
+FIRST(ARR_TAIL) = { "=", ε }
+
+---
+
+## EXPRESSIONS
+
+FIRST(PRIMARY) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+FIRST(PRIMARY_TAIL) = { "(", "[", ε }
+
+FIRST(MOD) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+FIRST(MUL) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+FIRST(ADD) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+FIRST(SHIFT) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+FIRST(COMPARISON) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+FIRST(EQUALITY) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+FIRST(LOGICAL) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+FIRST(EXPRESSION) = { IDENTIFIER, NUMBER, "(", STRING, CHARACTER }
+
+---
+
+## HIGH LEVEL
+
+FIRST(STATEMENT) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{"
+}
+
+FIRST(PROGRAM) =
+{
+int, short, long, char,
+IDENTIFIER,
+if,
+while,
+return,
+"{",
+ε
+}

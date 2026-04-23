@@ -1,0 +1,263 @@
+{
+    "symbol": "PROGRAM",
+    "children": [
+        {
+            "symbol": "STATEMENT",
+            "children": [
+                {
+                    "symbol": "IDENTIFIER",
+                    "value": "main",
+                    "children": []
+                },
+                {
+                    "symbol": "ID_TAIL",
+                    "children": [
+                        {
+                            "symbol": "(",
+                            "value": "(",
+                            "children": []
+                        },
+                        {
+                            "symbol": "ARG_LIST_OPT",
+                            "children": []
+                        },
+                        {
+                            "symbol": ")",
+                            "value": ")",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "symbol": "PROGRAM",
+            "children": [
+                {
+                    "symbol": "STATEMENT",
+                    "children": [
+                        {
+                            "symbol": "DATA_TYPE",
+                            "children": [
+                                {
+                                    "symbol": "int",
+                                    "value": "int",
+                                    "children": []
+                                }
+                            ]
+                        },
+                        {
+                            "symbol": "TYPE_TAIL",
+                            "children": [
+                                {
+                                    "symbol": "IDENTIFIER",
+                                    "value": "a",
+                                    "children": []
+                                },
+                                {
+                                    "symbol": "DECL_TAIL",
+                                    "children": [
+                                        {
+                                            "symbol": "=",
+                                            "value": "=",
+                                            "children": []
+                                        },
+                                        {
+                                            "symbol": "EXPRESSION",
+                                            "children": [
+                                                {
+                                                    "symbol": "LOGICAL",
+                                                    "children": [
+                                                        {
+                                                            "symbol": "EQUALITY",
+                                                            "children": [
+                                                                {
+                                                                    "symbol": "COMPARISON",
+                                                                    "children": [
+                                                                        {
+                                                                            "symbol": "SHIFT",
+                                                                            "children": [
+                                                                                {
+                                                                                    "symbol": "ADD",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "symbol": "MUL",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "symbol": "MOD",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "symbol": "PRIMARY",
+                                                                                                            "children": [
+                                                                                                                {
+                                                                                                                    "symbol": "NUMBER",
+                                                                                                                    "value": "10",
+                                                                                                                    "children": []
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "symbol": "MOD_TAIL",
+                                                                                                            "children": []
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "symbol": "MUL_TAIL",
+                                                                                                    "children": []
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "symbol": "ADD_TAIL",
+                                                                                            "children": []
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "symbol": "SHIFT_TAIL",
+                                                                                    "children": []
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "symbol": "COMPARISON_TAIL",
+                                                                            "children": []
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "symbol": "EQUALITY_TAIL",
+                                                                    "children": []
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "symbol": "LOGICAL_TAIL",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "symbol": "PROGRAM",
+                    "children": [
+                        {
+                            "symbol": "STATEMENT",
+                            "children": [
+                                {
+                                    "symbol": "IDENTIFIER",
+                                    "value": "b",
+                                    "children": []
+                                },
+                                {
+                                    "symbol": "ID_TAIL",
+                                    "children": [
+                                        {
+                                            "symbol": "=",
+                                            "value": "=",
+                                            "children": []
+                                        },
+                                        {
+                                            "symbol": "EXPRESSION",
+                                            "children": [
+                                                {
+                                                    "symbol": "LOGICAL",
+                                                    "children": [
+                                                        {
+                                                            "symbol": "EQUALITY",
+                                                            "children": [
+                                                                {
+                                                                    "symbol": "COMPARISON",
+                                                                    "children": [
+                                                                        {
+                                                                            "symbol": "SHIFT",
+                                                                            "children": [
+                                                                                {
+                                                                                    "symbol": "ADD",
+                                                                                    "children": [
+                                                                                        {
+                                                                                            "symbol": "MUL",
+                                                                                            "children": [
+                                                                                                {
+                                                                                                    "symbol": "MOD",
+                                                                                                    "children": [
+                                                                                                        {
+                                                                                                            "symbol": "PRIMARY",
+                                                                                                            "children": [
+                                                                                                                {
+                                                                                                                    "symbol": "IDENTIFIER",
+                                                                                                                    "value": "a",
+                                                                                                                    "children": []
+                                                                                                                },
+                                                                                                                {
+                                                                                                                    "symbol": "PRIMARY_TAIL",
+                                                                                                                    "children": []
+                                                                                                                }
+                                                                                                            ]
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "symbol": "MOD_TAIL",
+                                                                                                            "children": []
+                                                                                                        }
+                                                                                                    ]
+                                                                                                },
+                                                                                                {
+                                                                                                    "symbol": "MUL_TAIL",
+                                                                                                    "children": []
+                                                                                                }
+                                                                                            ]
+                                                                                        },
+                                                                                        {
+                                                                                            "symbol": "ADD_TAIL",
+                                                                                            "children": []
+                                                                                        }
+                                                                                    ]
+                                                                                },
+                                                                                {
+                                                                                    "symbol": "SHIFT_TAIL",
+                                                                                    "children": []
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            "symbol": "COMPARISON_TAIL",
+                                                                            "children": []
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "symbol": "EQUALITY_TAIL",
+                                                                    "children": []
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "symbol": "LOGICAL_TAIL",
+                                                            "children": []
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "symbol": "PROGRAM",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

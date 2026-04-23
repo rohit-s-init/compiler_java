@@ -1,0 +1,16 @@
+{
+  "name": "compiler-code",
+  "version": "1.0.0",
+  "main": "cli.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rohit Sawant",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "expres": "^0.0.5",
+    "express": "^5.2.1"
+  }
+}

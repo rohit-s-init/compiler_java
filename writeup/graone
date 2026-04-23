@@ -1,0 +1,67 @@
+PROGRAM → STATEMENT*
+
+STATEMENT →
+      DATA_TYPE TYPE_TAIL
+    | IDENTIFIER ID_TAIL
+    | IF_STATEMENT
+    | WHILE_LOOP
+    | RETURN_STMT
+    | BLOCK
+    | EXPRESSION
+
+TYPE_TAIL →
+      IDENTIFIER DECL_TAIL
+    | "[" "]" IDENTIFIER "=" "new" DATA_TYPE "[" EXPRESSION "]"
+
+DECL_TAIL →
+      "=" EXPRESSION
+    | "(" PARAM_LIST? ")" BLOCK
+
+ID_TAIL →
+      "=" EXPRESSION
+    | "(" ARG_LIST? ")"
+    | "[" EXPRESSION "]" ARR_TAIL
+
+ARR_TAIL →
+      "=" EXPRESSION
+    | ε
+
+PRIMARY →
+      IDENTIFIER PRIMARY_TAIL
+    | NUMBER
+    | "(" EXPRESSION ")"
+    | STRING
+    | CHARACTER
+
+PRIMARY_TAIL →
+      "(" ARG_LIST? ")"
+    | "[" EXPRESSION "]"
+    | ε
+
+
+
+// EXPRESSIONS (PRECEDENCE)
+
+EXPRESSION →
+    LOGICAL
+
+LOGICAL →
+    EQUALITY (("&&" | "||") EQUALITY)*
+
+EQUALITY →
+    COMPARISON (("==" | "!=") COMPARISON)*
+
+COMPARISON →
+    SHIFT ((">" | "<" | ">=" | "<=") SHIFT)*
+
+SHIFT →
+    ADD (("<<" | ">>") ADD)*
+
+ADD →
+    MUL (("+" | "-") MUL)*
+
+MUL →
+    MOD (("*" | "/") MOD)*
+
+MOD →
+    PRIMARY ("%" PRIMARY)*

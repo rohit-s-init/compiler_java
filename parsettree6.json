@@ -1,0 +1,1 @@
+{"type":"Program","children":[{"type":"VarDecl","children":[{"type":"Type","value":"int","children":[]},{"type":"Identifier","value":"number","children":[]},null]},{"type":"VarDecl","children":[{"type":"Type","value":"int","children":[]},{"type":"Identifier","value":"main","children":[]},null]}]}

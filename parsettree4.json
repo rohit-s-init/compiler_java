@@ -1,0 +1,45 @@
+{
+    "type": "Program",
+    "body": [
+        {
+            "funcName": "number",
+            "rtnType": "int",
+            "block": {
+                "type": "Block",
+                "body": []
+            },
+            "type": "function_declaration",
+            "params": [
+                {
+                    "dataType": "int",
+                    "name": "a",
+                    "type": "IDENTIFIERS"
+                }
+            ]
+        },
+        {
+            "funcName": "main",
+            "rtnType": "int",
+            "block": {
+                "type": "Block",
+                "body": [
+                    {
+                        "varName": "a",
+                        "expression": {
+                            "left": null,
+                            "main": {
+                                "name": "number",
+                                "type": "IDENTIFIERS"
+                            },
+                            "right": null
+                        },
+                        "dataType": "int",
+                        "type": "var_declaration"
+                    }
+                ]
+            },
+            "type": "function_declaration",
+            "params": []
+        }
+    ]
+}

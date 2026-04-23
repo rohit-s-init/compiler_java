@@ -1,14 +1,29 @@
 UPDATE_STACK_D:4 0xffff;
 LOAD:1 hp,15
-PUSH_STACK_D:4 10
 PUSH_STACK_D:4 temp_data;
-CALL:4 12
+CALL:4 10
 USER_INP:1 temp_data
 PUSH_STACK_R:4 bp;  //function  main pushing (saving) current bp to stack
 INC_STACK_D:1 24 // temp_register_update
 READ_STACK:4 bp // read_sp_to_bp read current sp value to bp
 UPD_BP_REG:4 bp // upd_bpreg_with_bpmem update bp register with bp memort
 INC_STACK_D:4 0
+LOAD:4:bp,bp,bp 12,1
+LOADCI:4:bp,gn,gn 12,0;
+IF_LESS:1 52
+IF_EQL:1 52
+PRINT_D:1 72
+PRINT_D:1 69
+PRINT_D:1 108
+PRINT_D:1 108
+PRINT_D:1 111
+PRINT_D:1 32
+PRINT_D:1 87
+PRINT_D:1 111
+PRINT_D:1 114
+PRINT_D:1 108
+PRINT_D:1 100
+JMP:1 20
 UPDATE_STACK_R:4 bp;
 DEC_STACK_D:4 24
 POP_STACK:4 bp;

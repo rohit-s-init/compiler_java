@@ -41,9 +41,13 @@ cd compiler_java
 ### 2. Configure the CLI Command
 
 Copy the full path to the folder containing lisa.bat.
+
 Press Win + S, search for "Edit the system environment variables", and open it.
+
 Click Environment Variables > Find Path under System Variables > Click Edit.
+
 Click New and paste your folder path.
+
 Click OK on all windows and restart your terminal.
 
 
@@ -70,6 +74,15 @@ lisa
 
 Example:
 program.lisa
+
+enter code inside the file:
+Example:
+
+int main(){
+    while(1){
+        printStr("HEllo World");
+    }    
+}
 
 ---
 

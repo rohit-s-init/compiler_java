@@ -3,8 +3,10 @@ set "CMD=%1"
 set "FILEPATH=%2"
 
 REM ====== Paths ======
-set "JAVA_COMPILER=E:\compiler\Main.jar"
-set "NODE_COMPILER=E:\compiler\backend\cli.js"
+set "BASE_DIR=%~dp0"
+
+set "JAVA_COMPILER=%BASE_DIR%Main.jar"
+set "NODE_COMPILER=%BASE_DIR%backend\cli.js"
 
 REM ====== Commands ======
 if "%CMD%"=="parse" (

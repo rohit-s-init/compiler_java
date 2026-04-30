@@ -197,7 +197,7 @@ public class Parser {
                                 .collect(Collectors.joining(" ")));
                 System.out.println("(input : " + current.getType() + ")");
                 if (opp == null) {
-                    throw new Exception("No rule for: " + top + " with token: " + current.getType());
+                    throw new Exception("No rule for: " + top + " with token: " + current.getType()+"("+current.getValue()+")");
                 }
 
                 stack.pop();

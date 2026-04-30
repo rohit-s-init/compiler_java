@@ -19,7 +19,8 @@ async function run() {
 
     try {
         // 📂 Read input file
-        const data = await fs.readFile(filePath, "utf8");
+        let data = await fs.readFile(filePath, "utf8");
+        data = data.replace(";"," ;").replace(/\r/g, '');;
 
         // 🔍 Parse
         const parser = new Parser(tokenize(data));
@@ -44,12 +45,12 @@ async function run() {
         await fs.writeFile(asmPath, assembly.join("\n"));
         await fs.writeFile(hexPath, "v2.0 raw\n" + hex);
 
-        console.log("✅ Compilation Successful!");
+        console.log("Compilation Successful!");
         console.log("Assembly:", asmPath);
         console.log("HEX:", hexPath);
 
     } catch (error) {
-        console.error("❌ Error:", error.message || error);
+        console.error("Error:", error.message || error);
     }
 }
 

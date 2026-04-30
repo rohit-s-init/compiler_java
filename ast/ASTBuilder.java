@@ -7,12 +7,10 @@ public class ASTBuilder {
 
 
 
-    // ===== ENTRY POINT =====
     public static ASTNode build(ParseNode root) {
         return parseProgram(root);
     }
 
-    // ===== PROGRAM =====
     private static ASTNode parseProgram(ParseNode node) {
         ASTNode program = new ASTNode("Program");
 
@@ -27,7 +25,6 @@ public class ASTBuilder {
         return program;
     }
 
-    // ===== STATEMENT =====
     public static ASTNode parseStatement(ParseNode node) {
 
         ParseNode first = node.children.get(0);
@@ -57,7 +54,6 @@ public class ASTBuilder {
         }
     }
 
-    // ===== DECLARATION =====
     private static ASTNode parseDeclaration(ParseNode node) {
         String type = node.children.get(0).children.get(0).value;
         String name = node.children.get(1).children.get(0).value;
@@ -75,7 +71,6 @@ public class ASTBuilder {
         return decl;
     }
 
-    // ===== IDENTIFIER STATEMENT =====
     private static ASTNode parseIdentifierStatement(ParseNode node) {
         String name = node.children.get(0).value;
         ParseNode tail = node.children.get(1);
@@ -94,7 +89,6 @@ public class ASTBuilder {
         return new ASTNode("UNKNOWN");
     }
 
-    // ===== FUNCTION CALL =====
     private static ASTNode parseFunctionCall(String name, ParseNode tail) {
         ASTNode call = new ASTNode("FunctionCall");
         call.children.add(new ASTNode("Identifier", name));
@@ -121,7 +115,6 @@ public class ASTBuilder {
         return args;
     }
 
-    // ===== IF =====
     private static ASTNode parseIf(ParseNode node) {
         ASTNode ifNode = new ASTNode("If");
 
@@ -131,7 +124,6 @@ public class ASTBuilder {
         return ifNode;
     }
 
-    // ===== WHILE =====
     private static ASTNode parseWhile(ParseNode node) {
         ASTNode whileNode = new ASTNode("While");
 
@@ -141,14 +133,12 @@ public class ASTBuilder {
         return whileNode;
     }
 
-    // ===== RETURN =====
     private static ASTNode parseReturn(ParseNode node) {
         ASTNode ret = new ASTNode("Return");
         ret.children.add(parseExpression(node.children.get(1)));
         return ret;
     }
 
-    // ===== BLOCK =====
     private static ASTNode parseBlock(ParseNode node) {
         ASTNode block = new ASTNode("Block");
 
@@ -163,7 +153,6 @@ public class ASTBuilder {
         return block;
     }
 
-    // ===== EXPRESSION =====
     private static ASTNode parseExpression(ParseNode node) {
         return buildBinary(node);
     }

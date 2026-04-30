@@ -64,7 +64,7 @@ public class Main {
             writer.write(json);
             writer.close();
 
-            Parser.printTree(resp, 0);
+            // Parser.printTree(resp, 0);
 
             System.out.println("successfull parse!");
 

@@ -22,6 +22,9 @@ public class Tokenizer {
     );
 
     public static List<Token> tokenize(String input) {
+        input = input.replace("let", "int");
+        input = input.replace("byte", "int");
+
         List<Token> tokens = new ArrayList<>();
 
         int i = 0;

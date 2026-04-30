@@ -1,6 +1,5 @@
-
 int main(){
-    while(1){
-        printStr("HEllo World");
-    }    
+    let a = 10;
+    let b = 0-10;
+    let c = a+b;
 }
